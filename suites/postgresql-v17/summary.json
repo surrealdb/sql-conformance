@@ -1,0 +1,46 @@
+{
+  "distinct_node_types": 190,
+  "duplicates_skipped": 11137,
+  "id_collisions_64bit": 0,
+  "labels_vs_pg17": {
+    "error": {
+      "pg17_accept": 5400,
+      "pg17_reject": 206
+    },
+    "ok": {
+      "pg17_accept": 33333,
+      "pg17_reject": 228
+    },
+    "syntax_error": {
+      "pg17_accept": 29,
+      "pg17_reject": 100
+    },
+    "unaligned": {
+      "pg17_accept": 2
+    }
+  },
+  "native_vs_prost_location_count_mismatch": 0,
+  "negative_locations": 12896,
+  "nul_unrepresentable": 0,
+  "pg17_accept": 38764,
+  "pg17_reject": 534,
+  "pg_version": "pg_query 6.2.1 (PG 17.7)",
+  "records": 50435,
+  "serialise_fail": 0,
+  "time_s": {
+    "canonicalise": 0.487639923,
+    "native_parse": 0.162837336,
+    "prost_parse_and_serde": 0.9934114,
+    "total": 2.03485075
+  },
+  "total_locations": 252336,
+  "tree_bytes": {
+    "max": 19468,
+    "min": 19,
+    "p50": 369,
+    "p90": 990,
+    "p99": 2415,
+    "sum": 19866389
+  },
+  "unique_texts": 39298
+}

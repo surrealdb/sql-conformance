@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+members = [
+    "oracles/pg_query-v17",
+    "oracles/pg_query-v18",
+    "tooling/json-diff",
+    "tooling/ratchet",
+]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"

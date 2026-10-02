@@ -1,0 +1,9 @@
+[suite]
+name = "postgresql-v18"
+description = "PostgreSQL 18 regression test suite baseline"
+upstream_ref = "REL_18_STABLE"
+pg_query_version = "18.0.0 pre-release (git ad0c87ed)"
+total_statements = 50435
+unique_statements = 39298
+accepted_statements = 39117
+rejected_statements = 181

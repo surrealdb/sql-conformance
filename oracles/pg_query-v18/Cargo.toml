@@ -1,0 +1,11 @@
+[package]
+name = "pg_query-v18"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+pg_query = { git = "https://github.com/pganalyze/pg_query.rs", rev = "ad0c87ed59c84ec6b42c970bb42d7985b7b5878b" }
+serde_json = "1.0"
+sha2 = "0.10"
+hex = "0.4"

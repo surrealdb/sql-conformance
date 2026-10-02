@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    name: Check and test tooling
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Check tooling and oracles
+        run: cargo check --all-targets
+
+      - name: Test tooling
+        run: cargo test --workspace
+
+      - name: Verify manifest integrity
+        run: shasum -a 256 -c MANIFEST.sha256

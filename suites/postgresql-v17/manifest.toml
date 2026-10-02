@@ -1,0 +1,9 @@
+[suite]
+name = "postgresql-v17"
+description = "PostgreSQL 17 regression test suite baseline"
+upstream_ref = "REL_17_STABLE"
+pg_query_version = "6.2.1"
+total_statements = 50435
+unique_statements = 39298
+accepted_statements = 38764
+rejected_statements = 534

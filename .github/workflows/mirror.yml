@@ -1,0 +1,28 @@
+name: Mirror to Public
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    name: Mirror to public repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Audit scan before public mirror
+        run: |
+          echo "Scanning for confidential strings or paths..."
+          ! grep -rnE "(/private/tmp/|/Users/)" . --exclude-dir=.git
+
+      - name: Push to public mirror
+        env:
+          MIRROR_TOKEN: ${{ secrets.PUBLIC_MIRROR_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git remote add public "https://x-access-token:${MIRROR_TOKEN}@github.com/surrealdb/sql-conformance.git" || true
+          git push public main:main --force || echo "Mirror push pending token configuration"
